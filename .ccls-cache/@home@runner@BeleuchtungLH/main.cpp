@@ -4,10 +4,10 @@
 constexpr uint8_t INTERVAL{30}; // in seconds
 
 constexpr uint8_t OUTCOUNT{12}; // number of OUT ports
-constexpr uint8_t OUT[]{3,4,5,6,7,8,9,10,11,12,13,14};
+constexpr uint8_t OUT[OUTCOUNT]{3,4,5,6,7,8,9,10,11,12,13,14};
 
 constexpr uint16_t LIGHTCOUNT{21}; // number of elements of LIGHT
-constexpr uint16_t LIGHT[]{
+constexpr uint16_t LIGHT[LIGHTCOUNT]{
 	3085,
 	3894,
 	2559,
@@ -34,7 +34,7 @@ constexpr uint16_t LIGHT[]{
 void setOutput(uint16_t const state){
 	for(uint8_t i=0; i<OUTCOUNT; ++i){
 		bool out = (state >> i) & 1;
-		digitalWrite(OUT[i], out?HIGH:LOW);	
+		digitalWrite(OUT[i], out?LOW:HIGH);	
 	}
 }
 
@@ -51,3 +51,4 @@ void loop(){
 	}
 }
 
+ 
