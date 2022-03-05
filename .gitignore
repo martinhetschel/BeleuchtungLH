@@ -1,4 +1,4 @@
 main
 main.o
-.cache
-.ccls-cache
+.cache/
+.ccls-cache/
